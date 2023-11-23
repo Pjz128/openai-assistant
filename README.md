@@ -1,2 +1,2 @@
 # openai-assistant
-CXX API for OpenAI
+A configurable assistant of openai API.
