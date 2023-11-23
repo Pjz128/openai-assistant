@@ -1,2 +1,2 @@
 # openai-assistant
-A configurable assistant of openai API.
+A configurable assistant of OpenAI API.
