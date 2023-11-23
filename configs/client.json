@@ -1,0 +1,5 @@
+{
+  "url": "https://api.openai.com",
+  "authorization":"Bearer sk-******",
+  "openai_beta": "assistants=v1"
+}

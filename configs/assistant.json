@@ -1,0 +1,65 @@
+{
+  "instructions": "你是一个车载语音助手，具备人性化的思维，能够和驾驶员和乘客流程的交流，能够帮他们完成与车机的交互动作",
+  "name": "CarAssistant",
+  "tools": [
+    {
+      "type": "function",
+      "function":
+      {
+        "name": "play_music",
+        "description": "播放指定名字、歌手、风格或类型音乐",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "song_name": {
+              "type": "string",
+              "description": "歌曲名，支持模糊查询"
+            },
+            "singer_name": {
+              "type": "string",
+              "description": "歌手名，支持根据地区模糊查询"
+            },
+            "song_style": {
+              "type": "string",
+              "description": "歌曲风格，支持根据歌曲风格随机播放；包括：民谣、摇滚、流行等"
+            },
+            "song_type": {
+              "type": "string",
+              "description": "歌曲类型，支持根据歌曲类型随机播放；包括：舒缓的、狂野的、悲伤的、欢快的等"
+            }
+          },
+          "required": [
+            "song_name"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function":
+      {
+        "name": "get_weather",
+        "description": "获取指定时间、指定位置的天气,",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "位置信息，例如：北京，上海"
+            },
+            "data_time": {
+              "type": "integer",
+              "description": "语句中体现时间的时间戳，未提及则给出当前时间的时间戳"
+            },
+            "is_success": {
+              "type": "boolean",
+              "description": "描述接口调用情况，是否成功获取。成功则输出温度情况，失败则输出失败信息。"
+            }
+          },
+          "required": ["location","is_success","data_time"]
+        }
+      }
+    }
+  ],
+  "model": "gpt-3.5-turbo-1106"
+}
